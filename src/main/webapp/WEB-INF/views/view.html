@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View City</title>
+</head>
+<body>
+<h1>View City: <span th:text="${cities.name}"></span></h1>
+<br>
+<a href="/cities"><input type="submit" value="List City"/></a>
+<br>
+<table border="1">
+    <tr>
+        <th>City</th>
+        <th>Nation</th>
+        <th>Acreage</th>
+        <th>Population</th>
+        <th>GDP</th>
+    </tr>
+    <th:block th:each="city : ${cities}">
+        <tr>
+            <td th:text="${cities.name}"></td>
+            <td th:text="${cities.nation.name}"></td>
+            <td th:text="${cities.acreage}"></td>
+            <td th:text="${cities.population}"></td>
+            <td th:text="${cities.gdp}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
